@@ -7,26 +7,26 @@ public class Cycles {
      *  5. Циклы. Часть 2
      */
     public static void main(String[] args) {
-        System.out.println("*** Задание №1 ***");
         task1();
-        System.out.println("*** Задание №2 ***");
         task2();
-        System.out.println("*** Задание №3 ***");
         task3();
-        System.out.println("*** Задание №4 ***");
         task4();
-        System.out.println("*** Задание №5 ***");
         task5();
-        System.out.println("*** Задание №6 ***");
         task6();
-        System.out.println("*** Задание №7 ***");
         task7();
-        System.out.println("*** Задание №8 ***");
         task8();
-        System.out.println("*** Задание №9 ***");
         task9();
+        task10();
+        task11();
+        task12();
+        task13();
+        task14();
+        task15();
+        task16();
+        task17();
     }
     public static void task1() {
+        TaskCounter.printThisTaskNumber();
           /* Задание 1
             С помощью цикла while посчитайте, сколько месяцев потребуется,
             чтобы накопить 2 459 000 рублей при условии, что первоначально мы имеем 0 рублей и готовы откладывать по 15 тысяч рублей.
@@ -41,10 +41,12 @@ public class Cycles {
             goal = goal + salarySaving;
             month++;
         }
-        System.out.printf("Месяц %d, сумма накоплений равна %d рублей\n\n", month, goal);
+        System.out.printf("Месяц %d, сумма накоплений равна %d рублей\n", month, goal);
     }
 
     public static void task2() {
+        TaskCounter.printThisTaskNumber();
+
             /*Выведите в одну строку через пробел числа от 1 до 10, используя цикл while.
             На следующей строке выведите числа в обратном порядке от 10 до 1, используя оператор for.
             Для обоих циклов можно использовать как одну общую переменную, так и в каждом цикле свою.
@@ -65,10 +67,12 @@ public class Cycles {
 
         for (int j = 10; j >=1; j--)
             System.out.print(j + " ");
-        System.out.println("\n");
+        System.out.println();
     }
 
     public static void task3() {
+        TaskCounter.printThisTaskNumber();
+
             /*В стране Y население равно 12 миллионам человек.
             За год рождаемость составляет 17 человек на 1000 человек, смертность - 8 человек.
             Рассчитайте, какая численность населения будет через 10 лет, принимая во внимание,
@@ -79,18 +83,23 @@ public class Cycles {
             В консоль выведен результат операции на каждый год в формате "Год …, численность населения составляет … "
             Инициализированы переменные, которые содержат в себе данные о рождаемости, общей численности и смертности
             Названия переменных подчиняются правилу camelCase*/
-        int futurePopulation = 12000000;
+        double futurePopulation = 12000000;
         int yearCounter = 0;
-        int birthRate = 17000;
-        int deathRate = 8000;
+        double birthRate;
+        double deathRate;
         while (yearCounter < 10) {
+            birthRate = futurePopulation / 1000 * 17;
+            deathRate = futurePopulation / 1000 * 8;
             futurePopulation = futurePopulation + birthRate - deathRate;
             yearCounter++;
+            System.out.printf("Год %2d, численность населения составляет %9.0f\n", yearCounter, futurePopulation);
         }
-        System.out.printf("Год %d, численность населения составляет %d\n\n", yearCounter, futurePopulation);
+
     }
 
     public static void task4() {
+        TaskCounter.printThisTaskNumber();
+
             /*Напишите программу, которая выводит в консоль сумму накоплений.
             Василий решил положить деньги на накопительный счет, где каждый месяц к сумме его вклада добавляется ещё 7%.
             Первоначальная сумма вклада Василия составляет 15 тысяч рублей.
@@ -111,6 +120,7 @@ public class Cycles {
     }
 
     public static void task5() {
+        TaskCounter.printThisTaskNumber();
             /*Видоизмените программу таким образом, чтобы в консоль выводились не все месяцы подряд,
             а только каждый шестой. Должны быть видны накопления за 6, 12, 18, 24 и далее месяцы. */
         double depo = 15000;
@@ -125,10 +135,10 @@ public class Cycles {
                 System.out.printf("Месяц: %d | Сумма накоплений: %.1f\n", month, goal);
             }
         }
-        System.out.println();
     }
 
     public static void task6() {
+        TaskCounter.printThisTaskNumber();
             /*Василий решил, что год копить деньги ближайшие 9 лет. И он хочет знать, какой будет сумма его накоплений
             каждые полгода на протяжении этих 9 лет. Исходная сумма всё так же 15 тысяч рублей,
             проценты банка – 7% ежемесячно.  Напишите программу, которая будет выводить Василию сумму его накоплений
@@ -148,10 +158,10 @@ public class Cycles {
                 System.out.printf("Месяц: %d | Сумма накоплений: %.1f\n", month, goal);
             }
         }
-        System.out.println();
     }
 
     public static void task7() {
+        TaskCounter.printThisTaskNumber();
             /*В вашей компании пятница является днем отчетным.
             Нам нужно написать программу, которая считает дни месяца по датам, определяет, какой день пятница,
             и выводит сообщение с напоминанием о том, что нужно подготовить еженедельный отчет.
@@ -170,10 +180,10 @@ public class Cycles {
         System.out.println("Введи число первой пятницы месяца от 1 до 7");
         for (firstFriday = scanner.nextInt(); firstFriday <= 31; firstFriday = firstFriday +7)
             System.out.printf("Сегодня пятница, %d-е число. Необходимо подготовить отчет.\n", firstFriday);
-        System.out.println();
     }
 
     public static void task8() {
+        TaskCounter.printThisTaskNumber();
             /*Мы решили написать астрономическое приложение, которое считает, когда над Землей пролетают кометы и их можно будет увидеть.
             Для начала нам нужно посчитать траекторию движения кометы, которая пролетает рядом с Землей каждый 79-й год, начиная с нулевого.
             Нам нужно узнать, в каких годах комета пролетала рядом с Землей за последние 200 лет и когда мы увидим ее в следующий раз.
@@ -202,6 +212,7 @@ public class Cycles {
     }
 
     public static void task9() {
+        TaskCounter.printThisTaskNumber();
         /*Напишите программу, которая выводит в консоль таблицу умножения на 2: */
         int result;
         for (int i = 1; i <= 10; i++) {
@@ -213,6 +224,7 @@ public class Cycles {
     // ************* дополнительные задачи *************
 
     public static void task10() {
+        TaskCounter.printThisTaskNumber();
             /*Необходимо пройти циклом по числам от 1 до 30 включительно и, если число делится на 3 без остатка,
             вывести ping, а если число делится на 5 без остатка, вывести pong.
             Если число делится без остатка и на 3, и на 5, необходимо вывести ping pong.
@@ -234,6 +246,7 @@ public class Cycles {
     }
 
     public static void task11() {
+        TaskCounter.printThisTaskNumber();
             /*Вывести первые 10 чисел последовательности Фибоначчи. Последовательность строится по следующему правилу:
             – Каждое следующее число равняется сумме двух предыдущих.
             Дано: две целочисленные переменные, первая равна 0, вторая равна 1.
@@ -253,9 +266,11 @@ public class Cycles {
                 arr[i] = arr[i-1] + arr[i - 2];
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
     }
 
     public static void task12() {
+        TaskCounter.printThisTaskNumber();
             /*Напишите программу, которая выводит в консоль все високосные года, начиная с 1904 года до 2096.
             В консоль результат должен выводиться в формате “… год является високосным*/
         for (int i = 1904; i<2096; i++) {
@@ -265,40 +280,63 @@ public class Cycles {
     }
 
     public static void task13() {
+        TaskCounter.printThisTaskNumber();
             /*Напишите программу, которая выводит в консоль последовательность цифр:
             7 14 21 28 35 42 49 56 63 70 77 84 91 98*/
         for (int i = 7; i < 100; i=i+7) {
             System.out.print(i+" ");
         }
+        System.out.println();
     }
 
     public static void task14() {
+        TaskCounter.printThisTaskNumber();
         /*Напишите программу, которая выводит в консоль последовательность цифр:
         1 2 4 8 16 32 64 128 256 512*/
         for (int i = 1; i < 1000; i=i*2) {
             System.out.print(i+" ");
         }
+        System.out.println();
     }
 
     public static void task15() {
+        TaskCounter.printThisTaskNumber();
         /*Посчитайте с помощью цикла for сумму годовых накоплений,
         если каждый месяц вы будете откладывать по 29 000 рублей “в банку”.
         Выведите сумму накоплений за каждый месяц в консоль в формате “Месяц … , сумма накоплений равна … рублей” .*/
         int j = 0;
         for (int i = 1; i <= 12 ; i++) {
             j = j + 29000;
-            System.out.printf("Месяц %d , сумма накоплений равна %d рублей\n", i, j);
+            System.out.printf("Месяц %d ,сумма накоплений равна %d рублей\n", i, j);
         }
     }
 
     public static void task16() {
+        TaskCounter.printThisTaskNumber();
         /*Перепишите решение задачи выше при условии, что деньги вы откладывать будете не “в банку”,
         а в банк под проценты – 12% годовых. Выведите сумму накоплений за каждый месяц в консоль в формате
         “Месяц … , сумма накоплений равна … рублей” */
         double j = 0;
         for (int i = 1; i <= 12 ; i++) {
             j = (j + 29000) + 290;
-            System.out.printf("Месяц %d , сумма накоплений равна %.2f рублей\n", i, j);
+            System.out.printf("Месяц %d ,сумма накоплений равна %.2f рублей\n", i, j);
+        }
+    }
+
+    public static void task17() {
+        TaskCounter.printThisTaskNumber();
+        /*Задача на диагонали массива*/
+
+        int matrixLenght = 10;
+        int[][] matrix = new int[matrixLenght][matrixLenght];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                if ( i == j || i + j == matrix.length-1) {
+                    matrix[i][j] = 1;
+                }
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
